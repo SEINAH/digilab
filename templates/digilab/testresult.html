@@ -1,0 +1,16 @@
+{% extends 'partials/base.html'%}
+{% block title %}Test Results Page{% endblock %}
+
+{% block content %}
+<h1>Test Results</h1>
+{% for result in test_results %}
+<div class="test-result-entry">
+    <h2>Test: {{ result.test.name }}</h2>
+    <p>Patient: {{ result.patient.first_name }} {{ result.patient.last_name }}</p>
+    <p>Result: {{ result.result }}</p>
+    <p>Date: {{ result.date }}</p>
+</div>
+{% empty %}
+<p>No test results available.</p>
+{% endfor %}
+{% endblock content %}

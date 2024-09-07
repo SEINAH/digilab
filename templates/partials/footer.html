@@ -1,0 +1,58 @@
+<style>
+    /* Body styles to accommodate sticky footer */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Full viewport height */
+        margin: 0;
+    }
+
+    /* Main content wrapper */
+    .wrapper {
+        flex: 1; /* Take up remaining vertical space */
+    }
+
+    /* Navbar styles (assumed, adjust according to actual navbar styles) */
+    .navbar {
+        background-color:#17a2b8; /* Navbar background color */
+        padding: 10px 15px; /* Navbar padding */
+        width: 100%;
+    }
+
+    /* Footer styles */
+    .footer {
+        background-color: #17a2b8
+        ; /* Original blue background color */
+        color: #fff; /* Original white text color */
+        padding: 10px 12px; /* Match navbar padding */
+        width: 100%;
+        bottom: 0; /* Stick to the bottom of the viewport */
+        position: fixed; /* Fixed positioning */
+    }
+
+    .footer a.text-white {
+        color: #fff; /* White text color */
+    }
+
+    .footer a.text-white:hover {
+        color: #17a2b8; /* Dark blue color on hover */
+        text-decoration: underline; /* Optional: Add underline on hover */
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <!-- Your main content here -->
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+               
+                <div class="col-md-12 d-flex align-items-center justify-content-start">
+                    <p>DIGILAB</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

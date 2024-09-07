@@ -1,0 +1,18 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+
+{% block content %}
+<h1>Lab Personnel List</h1>
+{% for personnel in lab_personnel %}
+<div class="lab-personnel-entry">
+    <h2>{{ personnel.first_name }} {{ personnel.last_name }}</h2>
+    <p>Position: {{ personnel.position }}</p>
+    <p>Contact Number: {{ personnel.contact_number }}</p>
+    <p>Email: {{ personnel.email }}</p>
+</div>
+{% empty %}
+<p>No lab personnel available.</p>
+{% endfor %}
+{% endblock content %}
+
