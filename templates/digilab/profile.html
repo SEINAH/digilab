@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Personnel Profile - DigiLab</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>{{ lab_personnel.user.first_name }} {{ lab_personnel.user.last_name }}'s Profile</h2>
+    <img src="{{ lab_personnel.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle">
+    
+    <p><strong>Email:</strong> {{ lab_personnel.user.email }}</p>
+    <p><strong>Phone Number:</strong> {{ lab_personnel.phone_number }}</p>
+    <p><strong>Address:</strong> {{ lab_personnel.address }}</p>
+    <p><strong>Bio:</strong> {{ lab_personnel.bio }}</p>
+    
+    <h4>Uploaded Documents</h4>
+    <p><strong>License:</strong> <a href="{{ lab_personnel.license_upload.url }}">Download License</a></p>
+    <p><strong>Certificate:</strong> <a href="{{ lab_personnel.certificate_upload.url }}">Download Certificate</a></p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

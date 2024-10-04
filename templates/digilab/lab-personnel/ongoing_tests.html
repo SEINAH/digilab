@@ -1,0 +1,15 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+{% block content %}
+
+<h2>Ongoing Tests</h2>
+<ul>
+    {% for ongoing_test in ongoing_tests %}
+        <li>{{ ongoing_test.test.test_name }} for {{ ongoing_test.test.patient.name }} started at {{ ongoing_test.started_at }}</li>
+    {% empty %}
+        <li>No ongoing tests at the moment.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+{% block content %}
+
+<h2>Completed Tests</h2>
+<ul>
+    {% for completed_test in completed_tests %}
+        <li>{{ completed_test.test.test_name }} for {{ completed_test.test.patient.name }} completed at {{ completed_test.completed_at }}</li>
+    {% empty %}
+        <li>No completed tests at the moment.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

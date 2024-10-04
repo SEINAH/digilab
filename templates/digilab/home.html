@@ -3,5 +3,85 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-{% include 'partials/topnav.html' %}
+
+ <!-- Hero Section -->
+ <header class="bg-secondary text-white text-center py-5">
+    <div class="container">
+      <h2 class="display-4">Welcome to DigiLab</h2>
+      <p class="lead">Bridging Patients, Doctors, and Lab Experts for Seamless Medical Testing.</p>
+      <a href="#" class="btn btn-light btn-lg mt-3">Book a Test Now</a>
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="about-us-image.jpg" alt="About Us" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h3>About Us</h3>
+          <p>DigiLab connects patients, doctors, and lab experts for fast, accurate diagnostic testing. We offer reliable results and streamlined services, making healthcare simpler and more efficient for everyone..</p>
+          <p>Our mission is to simplify the testing process by integrating healthcare professionals, enabling personalized care and timely medical insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-light py-5">
+    <div class="container text-center">
+      <h3 class="mb-4">Our Services</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Comprehensive Diagnostic Testing </h5>
+              <p class="card-text">Order diagnostic tests and receive accurate results directly through our application.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Personalized Test Results </h5>
+              <p class="card-text">Providing patients and doctors with tailored test results to guide precise medical care.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Seamless Collaboration</h5>
+              <p class="card-text">Connecting doctors, lab personnel, and patients to streamline communication and ensure efficient test management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accepted Payment Methods Section -->
+  <section id="payment-methods" class="py-5">
+    <div class="container text-center">
+      <h3>We Accept</h3>
+      <p class="lead">Choose your preferred payment method</p>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="mpesa-logo.png" alt="M-Pesa" class="img-fluid mb-2">
+          <p>M-Pesa</p>
+        </div>
+        <div class="col-md-4">
+          <img src="insurance-logo.png" alt="Insurance" class="img-fluid mb-2">
+          <p>Insurance</p>
+        </div>
+        <div class="col-md-4">
+          <img src="nhif-logo.png" alt="NHIF" class="img-fluid mb-2">
+          <p>NHIF</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 {%endblock %}

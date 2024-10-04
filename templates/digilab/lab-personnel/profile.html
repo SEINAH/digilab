@@ -1,0 +1,60 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex flex-column min-vh-100">
+    <div class="row justify-content-center mt-5 flex-grow-1">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-info text-white text-center">
+                    <h3>Lab Personnel Profile</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <!-- Profile Picture -->
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <img src="{{ lab_personnel.profile_image.url }}" class="rounded-circle img-fluid" alt="Profile Picture" style="width: 150px; height: 150px; object-fit: cover;">
+                            <p class="mt-2"><strong>{{ lab_personnel.first_name }} {{ lab_personnel.last_name }}</strong></p>
+                        </div>
+                        
+                        <!-- Personal Information -->
+                        <div class="col-md-8">
+                            <h5 class="text-info">Personal Information</h5>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p><strong>Email:</strong> {{ lab_personnel.email }}</p>
+                                    <p><strong>Phone Number:</strong> {{ lab_personnel.phone_number }}</p>
+                                </div>
+                                <div class="col-6">
+                                    <p><strong>License Number:</strong> {{ lab_personnel.license_number }}</p>
+                                    <p><strong>Certificate:</strong> {{ lab_personnel.certificate_upload }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Information -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="text-info">Professional Details</h5>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Years of Experience:</strong> {{ lab_personnel.years_experience }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

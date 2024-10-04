@@ -1,0 +1,23 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+{% block content %}
+
+<h2>Payment Requests</h2>
+
+<ul>
+    {% for payment_request in payment_requests %}
+        <li>
+            {{ payment_request.test.test_name }} for {{ payment_request.test.patient.name }} - Amount Requested: {{ payment_request.amount_requested }} 
+            {% if payment_request.is_paid %}
+                <span class="badge badge-success">Paid</span>
+            {% else %}
+                <span class="badge badge-danger">Unpaid</span>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No payment requests at the moment.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
