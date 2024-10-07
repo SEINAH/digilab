@@ -33,8 +33,8 @@ urlpatterns = [
     path('Register/patient/', PatientRegisterView.as_view(), name='digilab/registration/patient_register'),
     path('Register/lab-personnel/', LabPersonnelRegisterView.as_view(), name='digilab/registration/lab-personnel_register'),
     path('Register/doctor/', DoctorRegisterView.as_view(), name='digilab/registration/doctor_register'),
-    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),
+    path('login/', auth_views.LoginView.as_view(template_name='digilab/registration/login'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout'), name='logout'),
 
   
 
