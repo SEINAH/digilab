@@ -9,15 +9,52 @@
     {%load static%}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% block title %}{% endblock %}</title>
-      <!-- Bootstrap CSS -->
-      <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Custom CSS -->
-      <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+    <style>
+        /* Ensure the page takes up full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Flexbox layout to keep footer at the bottom */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1; /* Take up the remaining space */
+        }
+
+        footer {
+            background-color: #17a2b8;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    {% include 'partials/nav.html' %}
-    {% block content %}{% endblock %}
-    {% include 'partials/footer.html' %}
+    <div class="wrapper">
+        <!-- Navbar -->
+        {% include 'partials/nav.html' %}
+
+        <!-- Main Content -->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <!-- Footer -->
+        {% include 'partials/footer.html' %}
+    </div>
+
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

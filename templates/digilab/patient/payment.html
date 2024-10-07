@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% block title %}M-Pesa Payment{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h2>M-Pesa Payment</h2>
+  <div class="card">
+    <div class="card-body text-center">
+      <img src="mpesa-logo.png" alt="M-Pesa Logo" class="mpesa-logo mb-3"> <!-- Replace with the correct path for the M-Pesa logo -->
+      <h5>How to Pay with M-Pesa:</h5>
+      <ol class="text-left">
+        <li>Go to your M-Pesa menu on your phone.</li>
+        <li>Select <strong>Lipa na M-Pesa</strong>.</li>
+        <li>Choose <strong>Buy Goods and Services</strong>.</li>
+        <li>Enter the <strong>Till Number: 123456</strong>.</li> <!-- Change the till number as needed -->
+        <li>Enter the amount for the test.</li>
+        <li>Confirm and complete the payment.</li>
+      </ol>
+
+      <form method="POST" action="{% url 'submit_payment' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="mpesaCode">M-Pesa Transaction Code</label>
+          <input type="text" class="form-control" id="mpesaCode" name="mpesa_code" placeholder="Enter your M-Pesa transaction code" required>
+        </div>
+        <button type="submit" class="btn btn-success">Submit Payment</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

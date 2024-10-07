@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+{% block title %}Request Test{% endblock %}
+
+{% block content %}
+<h4>Request a New Test</h4>
+<form method="POST">
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label for="test_name">Test Name</label>
+        <input type="text" class="form-control" id="test_name" name="test_name" placeholder="Enter the name of the test" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="test_details">Test Details</label>
+        <textarea class="form-control" id="test_details" name="test_details" rows="3" placeholder="Provide detailed information about the test"></textarea>
+    </div>
+
+    {{ form.as_p }} <!-- To include any dynamic form fields passed through the context -->
+
+    <button type="submit" class="btn btn-primary">Submit Request</button>
+</form>
+{% endblock %}

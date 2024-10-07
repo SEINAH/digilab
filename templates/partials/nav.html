@@ -1,31 +1,42 @@
 <nav class="navbar navbar-expand-lg navbar-info bg-info">
     <div class="container">
-        <a class="navbar-brand text-white" href="{% url 'digilab/home' %}">DIGILAB</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <a class="navbar-brand text-white" href="{% url 'digilab/home' %}">Digital Laboratory System</a>
+        
+        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left side of the navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="{% url 'digilab/home' %}">Dashboard <span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="{% url 'digilab/home' %}">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 
-            <!-- Right side of the navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{% url 'digilab/home' %}">Login</a>
+                    <a class="nav-link text-white" href="{% url 'digilab/patient' %}">Patient</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{% url 'digilab/home' %}">Register</a>
+                    <a class="nav-link text-white" href="{% url 'digilab/doctor' %}">Doctor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'digilab/labpersonnel' %}">Lab Personnel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'digilab/about' %}">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'digilab/contact' %}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'digilab/register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+                </li>
+            </li>
+            
             </ul>
         </div>
     </div>

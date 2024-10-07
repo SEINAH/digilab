@@ -1,0 +1,49 @@
+{% extends 'partials/base.html'%}
+{% block title %}Register Page{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Include Bootstrap CSS (optional, for styling) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Register</h1>
+        <form action="" method="GET">
+            <div class="form-group">
+                <label for="registrationType">Select Registration Type:</label>
+                <select class="form-control" id="registrationType" name="registration_type" onchange="navigate()">
+                    <option value="">-- Select an option --</option>
+                    <option value="{% url 'digilab/registration/patient_register' %}">Patient</option>
+                    <option value="{% url 'digilab/registration/lab-personnel_register' %}">Lab Personnel</option>
+                    <option value="{% url 'digilab/registration/doctor_register' %}">Doctor</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="navigate()">Proceed to Register</button>
+        </form>
+    </div>
+
+    <script>
+        function navigate() {
+            const select = document.getElementById('registrationType');
+            const url = select.value;
+            if (url) {
+                window.location.href = url; // Navigate to the selected URL
+            }
+        }
+    </script>
+
+    <!-- Include Bootstrap JS (optional, for functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{%endblock %}

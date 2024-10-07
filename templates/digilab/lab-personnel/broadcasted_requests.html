@@ -1,0 +1,18 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+{% block content %}
+
+<h2>Broadcasted Requests</h2>
+
+<ul>
+    {% for request in broadcasted_requests %}
+        <li>
+            {{ request.message }} - Broadcasted by {{ request.lab_personnel.name }} at {{ request.broadcasted_at }}
+        </li>
+    {% empty %}
+        <li>No broadcasted requests at the moment.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

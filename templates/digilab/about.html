@@ -1,65 +1,157 @@
+{% extends 'partials/base.html'%}
+{% block title %}About Page{% endblock %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About DigiLab</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .info-heading {
-            color: #17a3b8; /* Bootstrap info color */
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1200x400'); /* Placeholder for a background image */
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .mission, .vision, .values {
+            margin-bottom: 40px;
+        }
+
+        .team-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+
+        .team-member {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .team-member h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .team-member p {
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <!-- About Page Content -->
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="info-heading">About DigiLab</h3>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1>About Digital Laboratory System</h1>
+            <p>Your partner in providing modern and reliable lab solutions.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container content-section">
+        <div class="row">
+            <div class="col-md-4 mission">
+                <h3>Our Mission</h3>
+                <p>To deliver efficient, accurate, and innovative laboratory services, improving healthcare access and quality for all.</p>
             </div>
-            <div class="card-body">
-                <p>Welcome to DigiLab, your trusted partner in enhancing accessibility to laboratory services. Our mission is to streamline the process of booking lab tests, obtaining results, and managing laboratory operations, all from the convenience of your home or workplace.</p>
-                
-                <h3 class="info-heading">Our Mission</h3>
-                <p>At DigiLab, we aim to revolutionize the way laboratory services are accessed and delivered. We are committed to providing a seamless and user-friendly platform that bridges the gap between patients, lab personnel, and healthcare administrators.</p>
-                
-                <h3 class="info-heading">Our Vision</h3>
-                <p>We envision a future where laboratory services are easily accessible to everyone, regardless of their location or mobility constraints. By leveraging cutting-edge technology, we strive to improve the efficiency and effectiveness of laboratory operations, contributing to better healthcare outcomes.</p>
-                
-                <h3 class="info-heading">Our Story</h3>
-                <p>DigiLab was founded by a team of healthcare and technology professionals who recognized the need for more accessible and efficient laboratory services. Our journey began with a simple idea: to create a platform that makes it easier for patients to book lab tests and receive results, while also supporting lab personnel and administrators in their daily tasks.</p>
-                
-                <h3 class="info-heading">Key Features</h3>
+            <div class="col-md-4 vision">
+                <h3>Our Vision</h3>
+                <p>To be a leading provider of cutting-edge laboratory technology, connecting doctors, lab personnel, and patients seamlessly.</p>
+            </div>
+            <div class="col-md-4 values">
+                <h3>Our Values</h3>
                 <ul>
-                    <li>Easy Lab Test Booking: Our platform allows patients to book lab tests with just a few clicks, choosing their preferred date, time, and location for sample collection.</li>
-                    <li>Real-time Test Results: Patients can access their test results in real time, ensuring they receive timely information for their healthcare needs.</li>
-                    <li>Secure and Private: We prioritize the security and privacy of our users' data, implementing robust measures to protect personal and health information.</li>
-                    <li>User-friendly Interface: Whether you're a patient, lab personnel, or administrator, our intuitive interface makes it easy to navigate and use the platform.</li>
+                    <li>Excellence in service</li>
+                    <li>Integrity and transparency</li>
+                    <li>Commitment to innovation</li>
+                    <li>Compassionate care</li>
                 </ul>
-                
-                <h3 class="info-heading">Meet the Team</h3>
-                <p>Our team is comprised of dedicated professionals with expertise in healthcare, technology, and customer service. We work tirelessly to ensure that DigiLab meets the highest standards of quality and reliability.</p>
-                <ul>
-                    <li>Doff Kwatch: Founder & CEO</li>
-                    <li>MB. Wigina Ronald Nyarambe: Supervisor & Technical Lead</li>
-                    <li>Dr. Ken Hadullo: ICT Consultant</li>
-                </ul>
-                
-                <h3 class="info-heading">Contact Us</h3>
-                <p>We are always here to help. If you have any questions, suggestions, or feedback, please feel free to reach out to us.</p>
-                <p>Email: support@digilab.com</p>
-                <p>Phone: +133-456-7890</p>
-                <p>Address: 133 Lab Street, Mombasa, Kenya</p>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@3.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <!-- Team Section -->
+    <div class="team-section">
+        <div class="container">
+            <h3 class="text-center">Meet Our Team</h3>
+            <div class="row">
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 1" class="img-fluid">
+                    <h5>Dr Wigina Nyambare</h5>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 2" class="img-fluid">
+                    <h5>Dr.Kennedy Hadullo</h5>
+                    <p>Project Manager</p>
+                </div>
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 3" class="img-fluid">
+                    <h5>Lenapunya sanaipei</h5>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 4" class="img-fluid">
+                    <h5>Mark Matakili</h5>
+                    <p>Chief Marketing Officer</p>
+                </div>
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 5" class="img-fluid">
+                    <h5>Sumeiyah Mohamed</h5>
+                    <p>Medical officer</p>
+                </div>
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 6" class="img-fluid">
+                    <h5>Doff Kwatch</h5>
+                    <p>Medical Officer</p>
+                </div>
+                <div class="col-md-3 team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 7" class="img-fluid">
+                    <h5>Dr.Egesa</h5>
+                    <p>Quality Assurance Lead</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+{%endblock content%}

@@ -1,0 +1,30 @@
+<!-- templates/digilab/testavailable_list.html -->
+{% extends 'partials/base.html' %}
+{% block title %} Test-Available Page {% endblock %}
+
+{% block content %}
+<h1 class="text-center my-4">Available Tests</h1>
+
+<div class="container">
+    <div class="row">
+        {% for test in tests %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ test.name }}</h5>
+                    <p class="card-text">{{ test.description }}</p>
+                    <p class="card-text"><strong>Cost:</strong> KES {{ test.price }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-block">Book Now</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-md-12 text-center">
+            <p>No tests available at the moment.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

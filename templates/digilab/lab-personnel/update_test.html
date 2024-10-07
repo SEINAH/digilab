@@ -1,0 +1,15 @@
+{% extends 'partials/base.html'%}
+{% block title %}LabPersonnel Page{% endblock %}
+
+{% block content %}
+
+<h2>Tests to Update</h2>
+    <ul>
+        {% for test in tests_to_update %}
+            <li>{{ test.test_name }} for {{ test.patient.name }} - Status: {{ test.status }}</li>
+        {% empty %}
+            <li>No tests need updating.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
