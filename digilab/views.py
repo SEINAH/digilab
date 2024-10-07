@@ -193,6 +193,11 @@ class DoctorRegisterView(CreateView):
         login(self.request, user)
         return redirect(self.success_url)
 
+# views.py
+from django.contrib.auth.views import LoginView
+
+class CustomLoginView(LoginView):
+    template_name = 'digilab/login.html'
 
     
 class DashboardView(LoginRequiredMixin, View):

@@ -3,7 +3,7 @@ from .views import HomeView,AboutView,PatientProfileView, PatientRegisterView, L
 from .views import PatientListView, LabPersonnelListView, DoctorListView, TestAvailableListView, TestResultListView,LabPersonnelProfileListView, UpdateTestListView, OngoingTestListView, CompletedTestListView,PaymentRequestListView, BroadcastedRequestListView,MedicalHistoryListView, PaymentView,RequestNewTestView
 from django.contrib.auth import views as auth_views
 from .views import RegisterView, ContactView 
-from .views import DashboardView
+from .views import DashboardView,LoginView
 
 
 urlpatterns = [ 
@@ -35,6 +35,8 @@ urlpatterns = [
     path('Register/doctor/', DoctorRegisterView.as_view(), name='digilab/registration/doctor_register'),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),
+
+
 
   
 
