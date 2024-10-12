@@ -25,9 +25,16 @@ SECRET_KEY = 'django-insecure-xet)n4l*lq&r!1uwoy0_f99e$rh4b!mp3cevet^xj@wm8h4gw6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1', 
+    's-katrina-sharp-comply.trycloudflare.com'
+]
 
-
+# CSRF trusted origins for Cloudflare tunneling
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'digilab.apps.DigilabConfig',
+    'mpesa_api.apps.MpesaApiConfig',
+
 ]
 
 MIDDLEWARE = [
