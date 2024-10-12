@@ -1,15 +1,85 @@
-{% extends 'partials/base.html'%}
-{% block title %}LabPersonnel Page{% endblock %}
+{% extends 'partials/base.html' %}
+{% block title %}Lab Personnel Page{% endblock %}
 
 {% block content %}
 
-<h2>Completed Tests</h2>
-<ul>
-    {% for completed_test in completed_tests %}
-        <li>{{ completed_test.test.test_name }} for {{ completed_test.test.patient.name }} completed at {{ completed_test.completed_at }}</li>
-    {% empty %}
-        <li>No completed tests at the moment.</li>
-    {% endfor %}
-</ul>
+<!-- Inline CSS for card styling and hover effect -->
+<style>
+    .custom-card {
+        background-color: white;
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: 1px solid #ddd;
+    }
+
+    .custom-card:hover {
+        background-color: #007bff;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-card:hover .card-title,
+    .custom-card:hover .card-subtitle,
+    .custom-card:hover .card-text {
+        color: white;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Completed Tests</h2>
+    <div class="row">
+        <!-- Example Test 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title">Blood Sugar Level</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: John Doe</h6>
+                    <p class="card-text">Completed At: 2024-10-01 14:30</p>
+                    <p class="card-text">Result: Normal (80 mg/dL)</p>
+                    <p class="card-text">Status: Completed</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Test 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title">Cholesterol Test</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: Jane Smith</h6>
+                    <p class="card-text">Completed At: 2024-10-02 13:45</p>
+                    <p class="card-text">Result: Elevated (220 mg/dL)</p>
+                    <p class="card-text">Status: Completed</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Test 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title">X-Ray</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: Michael Brown</h6>
+                    <p class="card-text">Completed At: 2024-10-02 15:00</p>
+                    <p class="card-text">Result: Fracture Detected</p>
+                    <p class="card-text">Status: Completed</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Test 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title">COVID-19 Test</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: Emily White</h6>
+                    <p class="card-text">Completed At: 2024-10-03 12:00</p>
+                    <p class="card-text">Result: Negative</p>
+                    <p class="card-text">Status: Completed</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 {% endblock content %}

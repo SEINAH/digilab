@@ -1,15 +1,48 @@
-{% extends 'partials/base.html'%}
-{% block title %}LabPersonnel Page{% endblock %}
+{% extends 'partials/base.html' %}
+{% block title %}Update Test Page{% endblock %}
 
 {% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Update Test</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <!-- Patient Name -->
+                <div class="form-group mb-3">
+                    <label for="patient_name">Patient Name</label>
+                    <input type="text" class="form-control" id="patient_name" value="{{ test.patient.name }}" readonly>
+                </div>
+                
+                <!-- Test Type -->
+                <div class="form-group mb-3">
+                    <label for="test_name">Test Type</label>
+                    <input type="text" class="form-control" id="test_name" value="{{ test.test_name }}" readonly>
+                </div>
+                
+                <!-- Test Result -->
+                <div class="form-group mb-3">
+                    <label for="result">Test Result</label>
+                    <input type="text" class="form-control" id="result" name="result" value="{{ test.result }}" required>
+                </div>
+                
+                <!-- Test Status -->
+                <div class="form-group mb-3">
+                    <label for="status">Test Status</label>
+                    <select class="form-control" id="status" name="status" required>
+                        <option value="Pending" {% if test.status == 'Pending' %}selected{% endif %}>Pending</option>
+                        <option value="In Progress" {% if test.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                        <option value="Completed" {% if test.status == 'Completed' %}selected{% endif %}>Completed</option>
+                    </select>
+                </div>
 
-<h2>Tests to Update</h2>
-    <ul>
-        {% for test in tests_to_update %}
-            <li>{{ test.test_name }} for {{ test.patient.name }} - Status: {{ test.status }}</li>
-        {% empty %}
-            <li>No tests need updating.</li>
-        {% endfor %}
-    </ul>
-
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-block">Update Test</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
