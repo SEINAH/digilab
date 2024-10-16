@@ -96,3 +96,10 @@ class DoctorRegistrationForm(UserCreationForm):
             )
             doctor.save()
         return user
+
+# forms.py
+from django import forms
+from django.contrib.auth.forms import AuthenticationForm
+from django.utils.translation import gettext_lazy as _
+from .models import Patient  # Make sure to import your Patient model
+
