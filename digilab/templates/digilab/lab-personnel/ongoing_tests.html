@@ -1,15 +1,85 @@
-{% extends 'partials/base.html'%}
-{% block title %}LabPersonnel Page{% endblock %}
+{% extends 'partials/base.html' %}
+{% block title %}Ongoing Test Page{% endblock %}
 
 {% block content %}
 
-<h2>Ongoing Tests</h2>
-<ul>
-    {% for ongoing_test in ongoing_tests %}
-        <li>{{ ongoing_test.test.test_name }} for {{ ongoing_test.test.patient.name }} started at {{ ongoing_test.started_at }}</li>
-    {% empty %}
-        <li>No ongoing tests at the moment.</li>
-    {% endfor %}
-</ul>
+<!-- Custom CSS to handle card color and hover effect -->
+<style>
+    .card {
+        background-color: white;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #ddd;
+    }
+    
+    .card:hover {
+        background-color: #007bff;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover .card-title,
+    .card:hover .card-subtitle,
+    .card:hover .card-text {
+        color: white;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Ongoing Tests</h2>
+    <div class="row">
+        <!-- Example Test 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Blood Sugar Level</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: John Doe</h6>
+                    <p class="card-text">Started At: 2024-10-01 10:00</p>
+                    <p class="card-text">Result: Awaiting Result</p>
+                    <p class="card-text">Status: In Progress</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Test 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cholesterol Test</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: Jane Smith</h6>
+                    <p class="card-text">Started At: 2024-10-02 09:30</p>
+                    <p class="card-text">Result: Awaiting Result</p>
+                    <p class="card-text">Status: In Progress</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Test 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">X-Ray</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: Michael Brown</h6>
+                    <p class="card-text">Started At: 2024-10-02 11:00</p>
+                    <p class="card-text">Result: Awaiting Result</p>
+                    <p class="card-text">Status: In Progress</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Test 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">COVID-19 Test</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Patient: Emily White</h6>
+                    <p class="card-text">Started At: 2024-10-03 08:45</p>
+                    <p class="card-text">Result: Awaiting Result</p>
+                    <p class="card-text">Status: In Progress</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 {% endblock content %}

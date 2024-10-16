@@ -3,7 +3,6 @@ from django.contrib.auth.models import User,AbstractUser
 from django.utils import timezone
 
 class Patient(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField()
@@ -16,7 +15,6 @@ class Patient(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 class LabPersonnel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     employee_id = models.CharField(max_length=20, unique=True)
@@ -31,7 +29,7 @@ class LabPersonnel(models.Model):
 
 
 class Doctor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+   
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     specialty = models.CharField(max_length=100)
@@ -173,3 +171,18 @@ class PatientProfile(models.Model):
 
     def __str__(self):
         return f"Profile for {self.patient.name}"    
+    
+    #forms
+from django.urls import reverse_lazy
+from django.views.generic import UpdateView
+from .models import Test
+
+class TestUpdateView(UpdateView):
+    model = Test
+    fields = ['result', 'status']  # Fields to be updated
+    template_name = 'update_test.html'
+    context_object_name = 'test'
+    
+    # Define the success URL after updating the test
+    def get_success_url(self):
+        return reverse_lazy('test_list')  # Adjust as per your URL names
